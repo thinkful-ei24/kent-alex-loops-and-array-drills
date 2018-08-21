@@ -54,3 +54,6 @@ function hello() {
 function goodbye() {
   console.log('Goodbye world');
 }
+
+repeat(hello, 5);
+repeat(goodbye, 5);
