@@ -83,6 +83,9 @@ const filteredNames = filter(myNames, function(name) {
 console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
+
+
+
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
   return function(location) {
@@ -111,9 +114,33 @@ deerWarning('Pacific Drive');
 rocksWarning('Atlantic Ave');
 
 function turtleTracker(movements) {
-  const filteredMovements = movements.filter(movement => movement[0] >= 0 && movement[1] >= 0);
-  const totalMovements = filteredMovements.map(movement => movement[0] + movement[1]);
+  const filteredMovements = movements.filter(
+    movement => movement[0] >= 0 && movement[1] >= 0
+  );
+  const totalMovements = filteredMovements.map(
+    movement => movement[0] + movement[1]
+  );
   totalMovements.forEach(movement => console.log(movement));
 }
 
 turtleTracker([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+
+function decodeWord(word) {
+  if (word.length === 3) {
+    return ' ';
+  } else {
+    return word[word.length - 1].toUpperCase();
+  }
+}
+
+function decodeSentence(sentence) {
+  const newArray = sentence.split(' ');
+  return newArray.reduce(function(message, word) {
+    message += decodeWord(word);
+    return message;
+  }, '');
+}
+
+let input =
+  'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+console.log(decodeSentence(input));
