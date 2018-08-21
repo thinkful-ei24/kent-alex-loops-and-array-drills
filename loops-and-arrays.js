@@ -109,3 +109,11 @@ rocksWarning('Main St and Pacific Ave');
 iceWarning('Mill Ave');
 deerWarning('Pacific Drive');
 rocksWarning('Atlantic Ave');
+
+function turtleTracker(movements) {
+  const filteredMovements = movements.filter(movement => movement[0] >= 0 && movement[1] >= 0);
+  const totalMovements = filteredMovements.map(movement => movement[0] + movement[1]);
+  totalMovements.forEach(movement => console.log(movement));
+}
+
+turtleTracker([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
